@@ -20,7 +20,7 @@ export class GameComponent implements OnInit {
   }
 
   public check(value: number): void {
-    const plnValue = parseFloat(this.currency.rates.PLN.toFixed(2));
+    const plnValue = this.round(this.currency.rates.PLN, 2);
 
     switch (true){
       case value > plnValue:
@@ -33,5 +33,10 @@ export class GameComponent implements OnInit {
         this.result = 'Gratulacje! :)';
         break;
     }
+  }
+
+  public round(num: number, precision: number): number{
+    const factorOfTen =  Math.pow(10, precision);
+    return Math.round(num * factorOfTen) / factorOfTen;
   }
 }
