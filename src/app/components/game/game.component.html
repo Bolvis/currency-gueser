@@ -1,0 +1,6 @@
+<p>ściąga: {{currency.rates.PLN.toFixed(2)}}</p>
+<p>Odgadnij ile PLN jest warte teraz EUR:</p>
+<input type="number" #input>
+<button (click)="check(input.value)">Sprawdź</button>
+<p>{{result}}</p>
+
